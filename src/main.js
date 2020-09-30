@@ -160,9 +160,9 @@ export default () => {
       <Row>
         <Col>
           {/* Information */}
-          {show && (
-            <Row className="mb-2">
-              <Col>
+          <Row className="mb-5">
+            <Col>
+              {show && (
                 <Alert variant="success" onClose={() => setShow(false)} dismissible>
                   <Alert.Heading>Diskusi Topik Himpunan</Alert.Heading>
                   <p>
@@ -195,57 +195,49 @@ export default () => {
                     <span className="font-weight-bold">Universitas Terbuka - Bogor</span>
                   </p>
                 </Alert>
-              </Col>
-            </Row>
-          )}
+              )}{' '}
+            </Col>
+          </Row>
           {/* Input */}
-          <Row className="mb-2">
-            <Col>
-              <Form>
-                {/* Himpunan */}
-                <Form.Row>
-                  <Form.Group as={Col}>
-                    <Form.Label
-                      htmlFor="A"
-                      className="d-block text-center font-weight-bold text-uppercase"
-                    >
-                      Himpunan A
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="A"
-                      name="himpunanA"
-                      onChange={handleInputChange}
-                      maxLength={himpunan.semesta.length - 1}
-                      autoComplete="off"
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col}>
-                    <Form.Label
-                      htmlFor="B"
-                      className="d-block text-center font-weight-bold text-uppercase"
-                    >
-                      Himpunan B
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      id="B"
-                      name="himpunanB"
-                      onChange={handleInputChange}
-                      maxLength={himpunan.semesta.length - 1}
-                      autoComplete="off"
-                      required
-                    />
-                  </Form.Group>
-                </Form.Row>
-                {/* Button  */}
-              </Form>
+          <Row className="mb-5">
+            <Col xs={6}>
+              <Form.Label
+                htmlFor="A"
+                className="d-block text-center font-weight-bold text-uppercase"
+              >
+                Himpunan A
+              </Form.Label>
+              <Form.Control
+                type="text"
+                id="A"
+                name="himpunanA"
+                onChange={handleInputChange}
+                maxLength={himpunan.semesta.length - 1}
+                autoComplete="off"
+                required
+              />
+            </Col>
+            <Col xs={6}>
+              <Form.Label
+                htmlFor="B"
+                className="d-block text-center font-weight-bold text-uppercase"
+              >
+                Himpunan B
+              </Form.Label>
+              <Form.Control
+                type="text"
+                id="B"
+                name="himpunanB"
+                onChange={handleInputChange}
+                maxLength={himpunan.semesta.length - 1}
+                autoComplete="off"
+                required
+              />
             </Col>
           </Row>
           {/* Output */}
-          <Row>
-            <Col xs={12} md={6} className="mb-2">
+          <Row className="mb-5">
+            <Col xs={12} md={6} className="mb-4">
               <Card>
                 <Card.Body>
                   <Card.Subtitle className="mb-2 text-muted">
@@ -258,7 +250,7 @@ export default () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} md={6} className="mb-2">
+            <Col xs={12} md={6} className="mb-4">
               <Card>
                 <Card.Body>
                   <Card.Subtitle className="mb-2 text-muted">
@@ -271,7 +263,7 @@ export default () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} md={6} className="mb-2">
+            <Col xs={12} md={6} className="mb-4">
               <Card>
                 <Card.Body>
                   <Card.Subtitle className="mb-2 text-muted">
@@ -284,7 +276,7 @@ export default () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} md={6} className="mb-2">
+            <Col xs={12} md={6} className="mb-4">
               <Card>
                 <Card.Body>
                   <Card.Subtitle className="mb-2 text-muted">
