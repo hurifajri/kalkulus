@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
+import './main.css';
 import { Card, Container, Form, Row, Col } from 'react-bootstrap';
 
 export default () => {
