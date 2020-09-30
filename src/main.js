@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
-import { Card, Container, Form, Row, Col } from 'react-bootstrap';
+import { Alert, Card, Container, Form, Row, Col } from 'react-bootstrap';
 
 export default () => {
   // Initial himpunan
@@ -153,12 +153,53 @@ export default () => {
     });
   };
 
+  const [show, setShow] = useState(true);
+
   return (
     <Container className="p-3">
       <Row>
         <Col>
+          {/* Information */}
+          {show && (
+            <Row className="mb-2">
+              <Col>
+                <Alert variant="success" onClose={() => setShow(false)} dismissible>
+                  <Alert.Heading>Diskusi Topik Himpunan</Alert.Heading>
+                  <p>
+                    Di bawah ini adalah penjelasan mengenai{' '}
+                    <span className="font-weight-bold">A'</span>,{' '}
+                    <span className="font-weight-bold">B'</span>,{' '}
+                    <span className="font-weight-bold">A-B</span> dan{' '}
+                    <span className="font-weight-bold">B-A</span> yang dikombinasikan dengan{' '}
+                    <span style={{ color: 'red' }}>warna</span> agar lebih mudah dipahami. Materi
+                    tersebut bagian dari Tuton Kalkulus I/MATA4110 Kelas 27 yang dibimbing oleh Ibu
+                    Imroatus Siyamah.
+                  </p>
+                  <span className="font-weight-bold">Penjelasan :</span>
+                  <br />
+                  <ol>
+                    <li>Jumlah anggota himpunan semesta (S) dibatasi hanya sampai angka 9</li>
+                    <li>
+                      Silakan masukan angka pada kolom Himpunan A dan B{' '}
+                      <span className="font-weight-bold">tanpa koma atau spasi</span>
+                    </li>
+                    <li>
+                      Ketika mengetik, hasil akan langsung muncul dan mengisi bagian-bagian di
+                      bawahnya
+                    </li>
+                  </ol>
+
+                  <hr />
+                  <p className="d-flex justify-content-between align-items-center">
+                    <span className="font-weight-bold">Muhamad Fajri - 042066721</span>
+                    <span className="font-weight-bold">Universitas Terbuka - Bogor</span>
+                  </p>
+                </Alert>
+              </Col>
+            </Row>
+          )}
           {/* Input */}
-          <Row className="mb-5">
+          <Row className="mb-2">
             <Col>
               <Form>
                 {/* Himpunan */}
@@ -177,6 +218,7 @@ export default () => {
                       onChange={handleInputChange}
                       maxLength={himpunan.semesta.length - 1}
                       autoComplete="off"
+                      required
                     />
                   </Form.Group>
                   <Form.Group as={Col}>
@@ -193,6 +235,7 @@ export default () => {
                       onChange={handleInputChange}
                       maxLength={himpunan.semesta.length - 1}
                       autoComplete="off"
+                      required
                     />
                   </Form.Group>
                 </Form.Row>

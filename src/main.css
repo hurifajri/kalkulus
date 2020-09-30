@@ -10,3 +10,7 @@ body {
     'Noto Color Emoji';
   background-color: lightblue;
 }
+
+.alert-dismissible {
+  padding-right: inherit;
+}
